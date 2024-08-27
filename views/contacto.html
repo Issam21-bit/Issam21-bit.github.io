@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página de Contacto">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://kit.fontawesome.com/e7162b13ff.js" crossorigin="anonymous"></script>
+    <title>ISSAM Page - Página de Contacto</title>
+</head>
+<body>
+    <div class="go-top">
+        <span class="fas fa-angle-up"></span>
+    </div>
+
+    <header id="inicio">
+        <div class="eje">
+            <nav class="menu">
+                <div class="logo">
+                    <h1><img src="../assets/images/LOGO-tr.png" alt="logo" id="logo" width="500px" height="500px"></h1>
+                    <span class="btn-menu"><i class="fas fa-bars"></i></span>
+                </div>
+                <div class="list-content">
+                    <ul class="lista">
+                        <li><a href="../index.html" target="_self">Inicio</a></li>
+                        <li><a href="./galeria.html" target="_self">Galería</a></li>
+                        <li><a href="./presupuesto.html">Presupuesto</a></li>
+                        <li><a class="active" href="#" target="_self">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="img-header">
+                <div class="bienvenido">
+                    <h2>Bienvenido a Investment Odyssey</h2>
+                    <p>ISSAM's Investment Odyssey - Crafting Financial Triumphs</p>
+                    <button id="abajo">Ver abajo</button>
+                </div>
+            </div>
+        </div>
+        <div class="bisel-abajo"></div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="contact1-container">                
+                    <div class="contact1-content">
+                        <h1>Encuéntranos en</h1>
+                        <p><i class="fa-solid fa-location-dot"></i>Valencia y Castellón de la plana</p>
+                        <p><i class="fa-solid fa-envelope"></i>investodyssey@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>912 92 33 12</p>
+                    </div>
+                    <div class="contact2-content">
+                        <h1>Formulario de contacto</h1>
+                        <form class="form-container" id="form1" name="form1" method="post" action="../procesar.php">
+                            <div class="form-content">
+                                <input type="text" id="nombre" class="nombre" placeholder="Nombre*" required>
+                            </div>
+                            <div class="form-content">
+                                <input type="text" id="email" class="email" placeholder="Email*" required>
+                            </div>
+                            <div class="form-content">
+                                <input type="text" id="asunto" class="asunto" placeholder="Asunto">
+                            </div>
+                            <div class="form-content">
+                                <textarea name="mensaje" id="mensaje" cols="35" rows="15" placeholder="Cuentanos aquí tu idea*"></textarea>
+                            </div>
+                            <div class="form-content">
+                                <input type="checkbox" id="privacidad" name="privacidad" required>
+                                <label for="privacidad">He leído la política de privacidad.</label>             
+                            </div>
+                            <div class="form-content">
+                                <input type="checkbox" id="notificacion" name="notificacion">
+                                <label for="notificacion">Acepto recibir las notificación.</label>
+                            </div>
+                            <div class="enviar">
+                                <input type="submit" id="enviar" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+            </section>
+
+            <section class="contact2-container">               
+                <div class="degr-back"></div>
+                <div class="eje2">
+                    <div class="t-title">
+                        <h1>Mapa para Llegar</h1>
+                        <hr>
+                    </div>
+                    <div id="map">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="../assets/images/LOGO-ft.png" alt="ISSAM inventment" width="500px" height="333px">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <ul>
+                    <li><a href="#">Visita nuestro sitio competitivo</a></li>
+                    <li><a href="#">Trabajos</a></li>
+                    <li><a href="#">Servicios de marketing</a></li>
+                    <li><a href="#">Programa de socios</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>CONTACTO Y AYUDA</h2>
+                <ul>
+                    <li><a href="../views/contacto.html">Contactanos</a></li>
+                    <li><span>Correo Electrónico : </span><a href="#">investodyssey@gmail.com</a></li>
+                    <li><span>Teléfono movil : </span><a href="#">912 92 33 12</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>SERVICIO</h2>
+                <ul>
+                    <li><a href="#">Diseño web</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Desarrollo</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>LEGAL</h2>
+                <ul>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="../index.html" class="fa fa-facebook"></a>
+                    <a href="../index.html" class="fa fa-twitter"></a>
+                    <a href="../index.html" class="fa fa-instagram"></a>
+                    <a href="../index.html" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>ISSAM Page</b> - Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="../scripts/js-contacto.js"></script>
+    
+</body>

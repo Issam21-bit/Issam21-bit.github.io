@@ -1,0 +1,1191 @@
+:root {
+    --colorCorp: #001F3F;
+    --black: #000000;
+    --magenta: #FF00FF;
+    --white: #FFF;
+    --title: 35px;
+    --text: 19px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    ;
+}
+
+html {
+    scroll-behavior: smooth;
+    /*importante para el efecto scroll*/
+}
+
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    overflow-x: hidden;
+    
+}
+
+.degr-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.bisel-abajo{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 10vh 100vw;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+}
+
+
+
+/************************* Menu navegación **************************/
+
+#inicio {
+    position: relative;
+    width: 100%;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+
+.menu .logo {
+    margin-left: 20px;
+}
+
+.menu .logo h1 img {
+    width: 110px;
+    height: 110px;
+}
+
+.menu .list-content {
+    margin-right: 20px;
+}
+
+.menu .list-content .lista {
+    display: flex;
+}
+
+.menu .list-content .lista li {
+    list-style: none;
+}
+
+.menu .list-content .lista li a {
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px;
+    color: #fff;
+    font-size: 15px;
+    border-bottom: 1px solid transparent;
+    transition: 0.9s;
+}
+
+.menu .list-content .lista li a:hover {
+    border-bottom: 1px solid var(--magenta);
+    color: #ececec;
+}
+
+.menu .list-content .lista li a.active {
+    border-bottom: 1px solid var(--magenta);
+    color: #ececec;
+}
+
+
+
+
+
+
+
+/********************* Imagen header *********************/
+
+.img-header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(../assets/images/img-head.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.img-header .bienvenido{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.img-header .bienvenido h2{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 200;
+}
+.img-header .bienvenido p{
+    font-size: 20px;
+    color: #fff;
+    margin-top: 20px;
+}
+.img-header .bienvenido > button{
+    width: 150px;
+    height: 40px;
+    background-color: var(--colorCorp);
+    border-radius: 24px;
+    color: #fff;
+    border: none;
+    margin-top: 22px;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.7s;
+    outline: none;
+
+}
+.img-header .bienvenido > button:hover{
+    background-color: var(--magenta);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************* Main **************************/
+
+main {
+    font-family: 'Open Sans', sans-serif;
+    height: 1200px;
+    margin-top: 200px;
+}
+
+.eje {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+main .t-title{
+    width: 50%;
+    margin: auto;/* centrado */
+    text-align: center;
+}
+main .t-title h2{
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+main .t-title hr{
+    width: 60%;
+    height: 3px;
+    margin: auto;
+    background-color: #000;
+    margin-bottom: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#form1 {
+    color: #fff;
+    width: 75%;
+    margin: 0px auto;
+    padding: 35px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: url(../assets/images/presupuesto.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+
+
+
+
+#form1 .form-control .d-p input{
+    width: 220px; /* Ancho del input menos el espacio del label */
+    padding: 8px 18px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.error-mensaje {
+    background-color: red;
+    color: black;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    visibility: hidden;
+}
+
+.success input{
+    border: 1px solid greenyellow;
+    display: flex;
+    width: 220px; /* Ancho del input menos el espacio del label */
+    padding: 8px 18px;
+    margin-right: 12.5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.error input{
+    border: 1px solid red;
+    display: flex;
+    width: 220px; /* Ancho del input menos el espacio del label */
+    padding: 8px 18px;
+    margin-right: 12.5px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.error label{
+    margin-bottom: 16px;
+}
+.success label{
+    margin-bottom: 16px;
+}
+.form-control .error .error-mensaje{
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+.form-control {
+    margin: 20px;
+    padding: 30px 20px;
+    color: #fff;
+    border: none;
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+#form1 .form-control .title-legend {
+    font-size: 26px;
+    margin: 20px 10px;
+    font-weight: bold;
+}
+
+#form1 .form-control .d-p label {
+    margin-bottom: 16px;
+
+}
+
+
+/* Estilos para los inputs y selects */
+input[type="number"],
+select {
+  width: calc(100% - 10px); /* Ancho del input menos el espacio del label */
+  padding: 8px 18px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* Ajustar la alineación de los labels */
+label {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+#form1 .form-control .p-o label{                
+    margin: 28px;
+}
+
+#form1 .form-control .p-o #producto{
+    margin-left: 5px;
+}
+
+#form1 .form-control .p-o #plazo{
+    width: 65px;
+    margin-left: 54px;
+    height: 35px;
+}
+
+#form1 .form-control .p-o .extra-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+#form1 .form-control .p-o .extra{
+    margin: 5px;
+    
+}
+
+#form1 .form-control .p-o output{
+    margin: 69px;
+    border: 2px solid white;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+#form1 .form-control .a-c{
+    margin-top: -90px;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#form1 .form-control .a-c label{
+    margin-right: 8px;
+}
+
+
+#form1 .form-control .en-bo{
+    margin-top: 79px;
+}
+
+#form1 .form-control .en-bo input {
+    width: 70px;
+    height: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+#form1 .form-control .en-bo input:hover {
+    background-color: var(--magenta);
+    transition: 0.9s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*********** Scroll ************/
+
+
+
+.go-top{
+    position: fixed;
+    bottom: 100px;
+    right: -100px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border: 2px solid var(--colorCorp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.7s;
+}
+.go-top > span{
+    font-size: 1.6rem;
+    color: var(--black);
+}
+.go-top:hover{
+    background-color: var(--magenta);
+    color: #fff;
+    border: 2px solid var(--white);
+}
+.go-top:hover span{
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************** Footer *******************************/
+
+
+
+
+
+.footer {
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+}
+
+.footer .grupo-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 45px 0px;
+
+}
+
+.footer .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .grupo-1 .box figure img {
+    width: 300px;
+    height: 200px;
+}
+
+.footer .grupo-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 23px;
+}
+
+.footer .grupo-1 .box ul li {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer .grupo-1 .box ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.9s;
+}
+
+.footer .grupo-1 .box ul li span {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer .grupo-1 .box ul li span:hover {
+    color: #fff;
+}
+
+.footer .grupo-1 .box ul li a:hover {
+    color: var(--magenta);
+}
+
+.footer .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: var(--colorCorp);
+    text-align: center;
+    transition: 0.9s;
+}
+
+.footer .grupo-1 .red-social a:hover {
+    color: var(--magenta);
+}
+
+.footer .grupo-2 {
+    background-color: var(--colorCorp);
+    padding: 15px 10px;
+    text-align: center;
+    border-top: 2px solid #fff;
+    color: #fff;
+}
+
+
+
+
+
+/************************************ Media Querys *******************************************/
+
+@media only screen and (max-width:900px){
+    .btn-menu > .fa-bars{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 25px;
+        color: var(--colorCorp);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .btn-menu > .fa.times{
+        color: var(--colorCorp);
+    }
+    .btn-menu > .fa-bars:hover{
+        color: var(--black);
+    }
+    .menu .logo{
+        margin-left: 30px;
+    }
+    .menu .list-content{
+        position: fixed;
+        top: 60px;
+        left: -100%; /* ocultar */
+        background-color: white;
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+    .menu .list-content .lista{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 3px solid var(--colorCorp);
+    }
+    .menu .list-content .lista li{
+        border-bottom: 1.5px solid var(--black);
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+    .menu .list-content .lista li a{
+        padding: 11px 0;
+        font-size: 20px;
+        color: var(--black);
+    }
+    .menu .list-content .lista li a.active{
+        border: none;
+        color: var(--magenta);
+    }
+    .menu .list-content .lista li a:hover{
+        border: none;
+        color: var(--magenta);
+    }
+}
+
+
+
+
+/**************************************IMG-HEADER******************************************/
+
+
+@media only screen and (max-width:900px){
+    .img-header .bienvenido h2{
+        font-size: 40px;
+    }
+    .img-header .bienvenido button{
+        width: 130px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width:773px){
+    .img-header .bienvenido h2{
+        font-size: 30px;
+    }
+    .img-header .bienvenido button{
+        width: 130px;
+        font-size: 17px;
+    }
+    .img-header .bienvenido p{
+        font-size: 17px;
+    }
+}
+
+
+
+
+
+
+/************************* Main **************************/
+
+
+@media screen and (max-width: 773px){
+
+main {
+    font-family: 'Open Sans', sans-serif;
+    height: 1500px;
+    margin-top: 200px;
+}
+
+.eje {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+main .t-title{
+    width: 50%;
+    margin: auto;/* centrado */
+    text-align: center;
+}
+main .t-title h2{
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+main .t-title hr{
+    width: 60%;
+    height: 3px;
+    margin: auto;
+    background-color: #000;
+    margin-bottom: 70px;
+}
+
+#form1 {
+    color: #fff;
+    width: 95%;
+    margin: 0px auto;
+    padding: 35px 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: url(../assets/images/presupuesto.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+
+#form1 .form-control .d-p input{
+    width: 100px; /* Ancho del input menos el espacio del label */
+    height: 22px;
+    font-size: 11.5px;
+    padding: 8px 18px;
+    margin-right: -55px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+
+
+.error-mensaje {
+    width: 100px;
+    background-color: red;
+    color: black;
+    font-size: 11.5px;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.success input{
+    border: 1px solid greenyellow;
+    width: 100px; /* Ancho del input menos el espacio del label */
+    height: 22px;
+    font-size: 11.5px;
+    padding: 8px 18px;
+    margin-left: 50.4px;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+.error input{
+    border: 1px solid red;
+    width: 100px; /* Ancho del input menos el espacio del label */
+    height: 22px;
+    font-size: 11.5px;
+    padding: 8px 18px;
+    margin-left: 49.4px;
+    border-radius: 3px;
+    margin-bottom: 9px;
+}
+.error label{
+    margin-bottom: 25px;
+    font-size: 11.5px;
+    margin-top: 12px;
+    margin-left: 50px;
+}
+.success label{
+    font-size: 11.5px;
+    margin-top: 12px;
+    margin-left: 50px;
+}
+.form-control .error .error-mensaje{
+    visibility: visible;
+    margin-left: 50px;
+}
+
+
+
+.form-control {
+    padding: 30px 0 30px 0;
+    color: #fff;
+    border: none;
+    display: grid;   
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    
+
+}
+
+#form1 .form-control .title-legend {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#form1 .form-control .d-p label {
+    margin-bottom: 25px;    
+    font-size: 11.5px;
+    margin-top: 12px;
+    margin-left: 50px;
+    
+
+
+}
+
+
+#form1 .form-control .a-c{
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#form1 .form-control .a-c label{
+    margin-right: 8px;
+    margin-top: 70px;
+    font-size: 11.7px;
+}
+
+
+#form1 .form-control .a-c input{
+    margin-top: 70px;
+}
+
+
+
+
+
+
+
+
+#form1 .form-control .p-o label{                
+    margin: 28px;
+    font-size: 11.5px;
+}
+
+#form1 .form-control .p-o #producto{
+    font-size: 11.5px;
+    margin-right: 10px;
+}
+
+#form1 .form-control .p-o #plazo{
+    width: 65px;
+    margin-left: 26px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#form1 .form-control .p-o .extra-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+#form1 .form-control .p-o .extra{
+    margin: 5px;
+    
+}
+
+#form1 .form-control .p-o output{
+    margin: 59px;
+    border: 2px solid white;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+
+
+#form1 .form-control .en-bo{
+    margin-left: -220px;
+    display: flex;
+    justify-content: center;
+}
+
+#form1 .form-control .en-bo input {
+    width: 70px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+#form1 .form-control .en-bo input:hover {
+    background-color: var(--magenta);
+    transition: 0.9s;
+}
+
+
+}
+
+
+@media screen and (min-width: 773px) and (max-width: 1300px){
+    main {
+        font-family: 'Open Sans', sans-serif;
+        height: 1500px;
+        margin-top: 200px;
+    }
+    
+    .eje {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    
+    main .t-title{
+        width: 50%;
+        margin: auto;/* centrado */
+        text-align: center;
+    }
+    main .t-title h2{
+        font-size: 2rem;
+        color: #000;
+        margin-bottom: 10px;
+    }
+    main .t-title hr{
+        width: 60%;
+        height: 3px;
+        margin: auto;
+        background-color: #000;
+        margin-bottom: 70px;
+    }
+    
+    #form1 {
+        color: #fff;
+        width: 95%;
+        margin: 0px auto;
+        padding: 35px 0;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background: url(../assets/images/presupuesto.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        
+    }
+    
+    #form1 .form-control .d-p input{
+        width: 140px; /* Ancho del input menos el espacio del label */
+        height: 33px;
+        font-size: 11.5px;
+        padding: 8px 18px;
+        margin-right: -55px;
+        border-radius: 3px;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        margin-left: 50px;
+    }
+    
+    
+    
+    .error-mensaje {
+        width: 130px;
+        background-color: red;
+        color: black;
+        font-size: 11.5px;
+        border-radius: 0.5rem;
+        padding: 0.4rem;
+        visibility: hidden;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .success input{
+        border: 1px solid greenyellow;
+        width: 140px; /* Ancho del input menos el espacio del label */
+        height: 33px;
+        font-size: 11.5px;
+        padding: 8px 18px;
+        margin-left: 50.4px;
+        border-radius: 3px;
+        margin-top: 25px;
+    }
+    .error input{
+        border: 1px solid red;
+        width: 140px; /* Ancho del input menos el espacio del label */
+        height: 33px;
+        font-size: 11.5px;
+        padding: 8px 18px;
+        margin-left: 50.4px;
+        border-radius: 3px;
+        margin-bottom: 9px;
+    }
+    .error label{
+        margin-bottom: 25px;
+        font-size: 11.5px;
+        margin-top: 12px;
+        margin-left: 50px;
+    }
+    .success label{
+        font-size: 11.5px;
+        margin-top: 12px;
+        margin-left: 50px;
+    }
+    .form-control .error .error-mensaje{
+        visibility: visible;
+        margin-left: 55px;
+    }
+    
+    
+    
+    .form-control {
+        padding: 30px 0 30px 0;
+        color: #fff;
+        border: none;
+        display: grid;   
+        grid-template-columns: 50% 50%;
+        text-align: center;
+        
+    
+    }
+    
+    #form1 .form-control .title-legend {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    #form1 .form-control .d-p label {
+        margin-bottom: 25px;    
+        font-size: 11.5px;
+        margin-top: 12px;
+        margin-left: 50px;
+        
+    
+    
+    }
+    
+    
+    #form1 .form-control .a-c{
+        margin-left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    #form1 .form-control .a-c label{
+        margin-right: 8px;
+        margin-top: 70px;
+        font-size: 11.7px;
+    }
+    
+    
+    #form1 .form-control .a-c input{
+        margin-top: 70px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    #form1 .form-control .p-o label{                
+        margin: 28px;
+        font-size: 11.5px;
+    }
+    
+    #form1 .form-control .p-o #producto{
+        font-size: 11.5px;
+        margin-right: 10px;
+    }
+    
+    #form1 .form-control .p-o #plazo{
+        width: 65px;
+        margin-left: 26px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #form1 .form-control .p-o .extra-container{
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    
+    #form1 .form-control .p-o .extra{
+        margin: 5px;
+        
+    }
+    
+    #form1 .form-control .p-o output{
+        margin: 59px;
+        border: 2px solid white;
+        border-radius: 2px;
+        padding: 4px;
+    }
+    
+    
+    
+    #form1 .form-control .en-bo{
+        margin-left: -360px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #form1 .form-control .en-bo input {
+        width: 70px;
+        height: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #000;
+        color: #fff;
+        margin-right: 10px;
+        border: none;
+        border-radius: 10px;
+    }
+    
+    #form1 .form-control .en-bo input:hover {
+        background-color: var(--magenta);
+        transition: 0.9s;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************FOOTER*******************************************/
+
+@media only screen and (max-width:900px){
+    .footer .grupo-1 {
+     width: 90%;
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     text-align: center; 
+    }
+}
+
+
+
+@media only screen and (max-width:900px){
+   .footer .ejez .f-container .formulario{
+    width: 85%;
+    padding: 20px;
+   }
+   .footer .ejez .f-container .formulario input{
+    width: 100%;
+   }
+}
+
+@media only screen and (max-width:590px){
+    .footer .ejez .f-container .formulario{
+        width: 90%;
+        padding: 20px;
+    }
+    .footer .ejez .f-container .formulario input{
+        width: 100%;
+        font-size: 17px;
+    }
+    .footer .ejez .f-container .formulario textarea{
+        width: 100%;
+        font-size: 17px;
+    }
+    .footer .ejez .f-container .formulario label{
+        font-size: 17px;
+    }
+}
+
+
+
+
+
+
+@media only screen and (min-width:900px){
+    .btn-menu > .fa-bars{
+        display: none;
+    }
+}

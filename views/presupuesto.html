@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página de Presupuesto">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../css/presupuesto.css">
+    <script src="https://kit.fontawesome.com/e7162b13ff.js" crossorigin="anonymous"></script>
+    <title>ISSAM Page - Página de Presupuesto</title>
+</head>
+
+<body>
+    <!--Butón subir-->
+    <div class="go-top">
+        <span class="fas fa-angle-up"></span>
+    </div>
+
+    <header id="inicio">
+
+        <nav class="menu">
+            <div class="logo">
+                <h1><img src="../assets/images/LOGO-tr.png" alt="logo" id="logo" width="500px" height="500px"></h1>
+                <span class="btn-menu"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="list-content">
+                <ul class="lista">
+                    <li><a href="../index.html" target="_self">Inicio</a></li>
+                    <li><a href="./galeria.html" target="_self">Galería</a></li>
+                    <li><a class="active" href="#" target="_self">Presupuesto</a></li>
+                    <li><a href="./contacto.html" target="_self">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="img-header">
+            <div class="bienvenido">
+                <h2>Bienvenido a Investment Odyssey</h2>
+                <p>ISSAM's Investment Odyssey - Crafting Financial Triumphs</p>
+                <button id="abajo">Ver abajo</button>
+            </div>
+        </div>
+
+        <div class="bisel-abajo"></div>
+    </header>
+    <main>
+        <div class="t-title">
+            <h2>Presupuesto</h2>
+            <hr>
+        </div>
+        <form id="form1" name="form1" method="post" action="../procesar.php">
+            <div class="degr-back"></div>
+            <div class="eje">
+                <fieldset class="form-control"> <!--Crea l borde-->
+
+                    <legend class="title-legend">Datos personales</legend>
+                    <div class="d-p">
+                        <label for="name">Nombre :</label>
+                        <input type="text" id="name" name="name" placeholder="Escriba su nombre" required>
+                        <small class="error-mensaje">Error mensaje</small> <!--para el mensaje de error-->
+                    </div>
+                    <div class="d-p">
+                        <label for="apellido">Apellido :</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Escriba su apellido" required>
+                        <small class="error-mensaje">Error mensaje</small>
+                    </div>
+                    <div class="d-p">
+                        <label for="email">Correo electrónico :</label>
+                        <input type="text" id="email" name="email" placeholder="Escriba su correo" required>
+                        <small class="error-mensaje">Error mensaje</small>
+                    </div>
+                    <div class="d-p">
+                        <label for="tele">Teléfono :</label>
+                        <input type="text" id="tele" name="tele" placeholder="Escriba su teléfono" required>
+                        <small class="error-mensaje">Error mensaje</small>
+                    </div>
+
+                </fieldset>
+                <fieldset class="form-control">
+                    <legend class="title-legend">Presupuesto</legend>
+                    <div class="p-o">
+                        <label for="producto">Selecciona tu producto:</label>
+                        <select id="producto" name="producto" required>
+                            <option value="" disabled selected hidden>Selecciona un producto</option>
+                            <option value="camisa" data-precio="25.99">Camisa - $25.99</option>
+                            <option value="pantalón" data-precio="39.99">Pantalón - $39.99</option>
+                            <option value="chaqueta" data-precio="55.50">Chaqueta - $55.50</option>
+                            <option value="falda" data-precio="29.99">Falda - $29.99</option>
+                            <option value="calcetines" data-precio="9.50">Calcetines - $9.50</option>
+                            <!-- Agrega más opciones con sus respectivos precios -->
+                        </select>
+                    </div>
+                    <div class="p-o">
+                        <label for="plazo">Plazo de envío:</label>
+                        <input type="number" id="plazo" name="plazo" min="1" max="365" onchange="calcularPresupuesto()"
+                            required>
+                    </div>
+                    <div class="p-o">
+                        <label>Extras:</label>
+                        <div class="extra-container">
+                            <label for="extra1" class="label-pre extra">Envío rápido (+$10)</label>
+                            <input class="extra" type="checkbox" id="extra1" name="extra" value="Envío rápido (+$10)"
+                                data-precio="10" onchange="calcularPresupuesto()">
+                        </div>
+                        <div class="extra-container">
+                            <label for="extra2" class="label-pre extra">Envoltorio de regalo (+$5)</label>
+                            <input class="extra" type="checkbox" id="extra2" name="extra"
+                                value="Envoltorio de regalo (+$5)" data-precio="5" onchange="calcularPresupuesto()">
+                        </div>
+                        <div class="extra-container">
+                            <label for="extra3" class="label-pre extra">Seguro de envío (+$8)</label>
+                            <input class="extra" type="checkbox" id="extra3" name="extra" value="Seguro de envío (+$8)"
+                                data-precio="8" onchange="calcularPresupuesto()">
+                        </div>
+                        <div class="extra-container">
+                            <label for="extra4" class="label-pre extra">Instalación premium (+$20)</label>
+                            <input class="extra" type="checkbox" id="extra4" name="extra"
+                                value="Instalación premium (+$20)" data-precio="20" onchange="calcularPresupuesto()">
+                        </div>
+                    </div>
+                    <div class="p-o">
+                        <label for="presupuestoFinal">Presupuesto Final:</label>
+                        <output id="presupuestoFinal">$0.00</output>
+                    </div>
+                </fieldset>
+                <fieldset class="form-control">
+                    <legend class="title-legend">Aceptación de Condiciones y envío del presupuesto</legend>
+                    <div class="a-c">
+                        <label for="privacidad">He leído la política de privacidad</label>
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+                        <small class="error-mensaje">Error mensaje</small>
+                    </div>
+                    <div class="en-bo">
+                        <input type="submit" id="enviar" value="enviar">
+                        <input type="reset" id="borrar" value="borrar">
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="../assets/images/LOGO-ft.png" alt="ISSAM inventment" width="500px" height="333px">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <ul>
+                    <li><a href="#">Visita nuestro sitio competitivo</a></li>
+                    <li><a href="#">Trabajos</a></li>
+                    <li><a href="#">Servicios de marketing</a></li>
+                    <li><a href="#">Programa de socios</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>CONTACTO Y AYUDA</h2>
+                <ul>
+                    <li><a href="../views/contacto.html">Contactanos</a></li>
+                    <li><span>Correo Electrónico : </span><a href="#">investodyssey@gmail.com</a></li>
+                    <li><span>Teléfono movil : </span><a href="#">912 92 33 12</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>SERVICIO</h2>
+                <ul>
+                    <li><a href="#">Diseño web</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Desarrollo</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>LEGAL</h2>
+                <ul>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="../index.html" class="fa fa-facebook"></a>
+                    <a href="../index.html" class="fa fa-twitter"></a>
+                    <a href="../index.html" class="fa fa-instagram"></a>
+                    <a href="../index.html" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>ISSAM Page</b> - Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    <script src="../scripts/js-presupuesto.js"></script>
+</body>
+
+</html>
